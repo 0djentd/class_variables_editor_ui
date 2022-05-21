@@ -22,11 +22,6 @@ import re
 import math
 import copy
 
-import bpy
-from bpy.props import (BoolProperty, IntProperty,
-                       FloatProperty, StringProperty)
-from bpy.types import PropertyGroup
-
 from .utils import (get_var_editor_prop_name,
                     get_prop_group_name,
                     get_last_attr_name_in_sequence,
@@ -38,25 +33,35 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.ERROR)
 logger.setLevel(logging.DEBUG)
 
+try:
+    import bpy
+    from bpy.props import (BoolProperty, IntProperty,
+                           FloatProperty, StringProperty)
+    from bpy.types import PropertyGroup
+    _WITH_BPY = True
+except ModuleNotFoundError:
+    _WITH_BPY = False
+    
 
-class UIClassVariablesEditorCache(PropertyGroup):
-    """This prop group used to edit variables in ui."""
-
-    # New attribute value
-    var_editor_bool: BoolProperty(default=False)
-    var_editor_int: IntProperty(default=0)
-    var_editor_float: FloatProperty(default=0.0)
-    var_editor_str: StringProperty(default='')
-
-    # Attribute name
-    # Example: m_list[0].default_data['by_type'][0]
-    # 'cls' should be skipped, as
-    # var_editor_class is used insead.
-    var_editor_currently_edited: StringProperty('')
-
-    # Class name with 'bpy.types.' prefix
-    # Example: bpy.types.EMTK_OT_clusters_list_popup
-    var_editor_class: StringProperty('')
+if _WITH_BPY:
+    class UIClassVariablesEditorCache(PropertyGroup):
+        """This prop group used to edit variables in ui."""
+    
+        # New attribute value
+        var_editor_bool: BoolProperty(default=False)
+        var_editor_int: IntProperty(default=0)
+        var_editor_float: FloatProperty(default=0.0)
+        var_editor_str: StringProperty(default='')
+    
+        # Attribute name
+        # Example: m_list[0].default_data['by_type'][0]
+        # 'cls' should be skipped, as
+        # var_editor_class is used insead.
+        var_editor_currently_edited: StringProperty('')
+    
+        # Class name with 'bpy.types.' prefix
+        # Example: bpy.types.EMTK_OT_clusters_list_popup
+        var_editor_class: StringProperty('')
 
 
 class UIClassVariablesEditor():
@@ -435,12 +440,10 @@ class UIClassVariablesEditor():
     @classmethod
     def var_editor_start(cls, variable):
         """Start editing class variable in UI.
-
         variable str should only use " or '.
 
         Example:
-        var_editor_start(bpy.types.EMTK_OT_clusters_list_popup,
-                         'm_list.get_cluster().name')
+        var_editor_start(bpy.types.EMTK_OT_clusters_list_popup, 'm_list.get_cluster().name')
         """
         if type(variable) is not str:
             raise TypeError
@@ -479,8 +482,7 @@ class UIClassVariablesEditor():
         variable str should only use " or '.
 
         Example:
-        var_editor_stop(bpy.types.EMTK_OT_clusters_list_popup,
-                         'm_list.get_cluster().name')
+        var_editor_stop(bpy.types.EMTK_OT_clusters_list_popup, 'm_list.get_cluster().name')
         """
         if type(variable) is not str:
             raise TypeError
