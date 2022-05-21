@@ -14,13 +14,19 @@ WIP:
     dict
     list
 
-# Installation
+## How to use
+Subclass `class_variables_editor_ui.panel.UIClassVariablesEditor`
+Use method `draw_var_editor`
+
+## Installation
 Linux:
 ```
 git clone https://github.com/0djent/class_variables_editor_ui.git
 cd class_variables_editor_ui
-./setup-linux.sh
+mkdir -p ~/.config/blender/3.1/scripts/modules
+cp -r src ~/.config/blender/3.1/scripts/modules/class_variables_editor_ui
 ```
+Or use `setup-linux.sh`.
 Or install through `pip` for blender's python.
 
 Windows:
