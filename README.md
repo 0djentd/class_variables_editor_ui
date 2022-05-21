@@ -1,7 +1,9 @@
-This module provides UI for editing python variables through blender UI, as alternative to properties.
-Its pretty useless with dicts and lists of generic types though, because there is no option to choose new element type.
+# Class variables editor UI
+## Description
+This module provides UI for editing class variables through blender UI, as alternative to properties.
+Its pretty useless with dicts and lists of generic types though, because there is currntly no option to choose new element type.
 
-Currently working:
+Done:
     bool
     int
     float
