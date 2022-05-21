@@ -41,24 +41,24 @@ try:
     _WITH_BPY = True
 except ModuleNotFoundError:
     _WITH_BPY = False
-    
+
 
 if _WITH_BPY:
     class UIClassVariablesEditorCache(PropertyGroup):
         """This prop group used to edit variables in ui."""
-    
+
         # New attribute value
         var_editor_bool: BoolProperty(default=False)
         var_editor_int: IntProperty(default=0)
         var_editor_float: FloatProperty(default=0.0)
         var_editor_str: StringProperty(default='')
-    
+
         # Attribute name
         # Example: m_list[0].default_data['by_type'][0]
         # 'cls' should be skipped, as
         # var_editor_class is used insead.
         var_editor_currently_edited: StringProperty('')
-    
+
         # Class name with 'bpy.types.' prefix
         # Example: bpy.types.EMTK_OT_clusters_list_popup
         var_editor_class: StringProperty('')
