@@ -5,14 +5,14 @@ This module provides UI for editing class variables through blender UI, as alter
 Its pretty useless with dicts and lists of generic types though, because there is currntly no option to choose new element type.
 
 kinda works:
-    - bool
-    - int
-    - float
-    - str
+    bool
+    int
+    float
+    str
 
 WIP, but kinda works:
-    - dict
-    - list
+    dict
+    list
 
 ## How to use
 Subclass `class_variables_editor_ui.panel.UIClassVariablesEditor` and use method `draw_var_editor`
