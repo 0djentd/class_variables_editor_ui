@@ -16,8 +16,9 @@ WIP:
 # Installation
 Linux:
 ```
-mkdir -p ~/.config/blender/3.1/scripts/modules
-cp -r class_var_editor_ui ~/.config/blender/3.1/scripts/modules
+git clone https://github.com/0djent/class_variables_editor_ui.git
+cd class_variables_editor_ui
+./setup-linux.sh
 ```
 Or install through `pip` for blender's python.
 
