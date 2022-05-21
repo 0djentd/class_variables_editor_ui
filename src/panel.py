@@ -31,7 +31,7 @@ from .utils import (get_var_editor_prop_name,
 
 logger = logging.getLogger(__name__)
 # logger.setLevel(logging.ERROR)
-logger.setLevel(logging.DEBUG)
+# logger.setLevel(logging.DEBUG)
 
 try:
     import bpy
