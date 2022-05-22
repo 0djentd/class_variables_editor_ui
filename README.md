@@ -2,7 +2,7 @@
 ![example](static/screenshot_1.png)
 ## Description
 This module provides UI for editing class variables through blender UI, as alternative to properties.
-Its pretty useless with dicts and lists of generic types though, because there is currntly no option to choose new element type.
+Its pretty useless with dicts and lists of generic types though, because there is currently no option to choose new element type.
 
 kinda works:
     bool
