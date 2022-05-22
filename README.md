@@ -19,12 +19,8 @@ Subclass `class_variables_editor_ui.panel.UIClassVariablesEditor` and use method
 
 ## Installation
 Linux:
-```
-git clone https://github.com/0djent/class_variables_editor_ui.git
-cd class_variables_editor_ui
-mkdir -p ~/.config/blender/3.1/scripts/modules
-cp -r src ~/.config/blender/3.1/scripts/modules/class_variables_editor_ui
-```
+Symlink `~/.config/blender/3.1/scripts/modules/class_variables_editor_ui` to `src`
+
 Or use `setup-linux.sh`.
 Or install through `pip` for blender's python.
 
