@@ -17,25 +17,22 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
-import logging
-import re
-import math
 import copy
+import logging
+import math
+import re
 
-from .utils import (get_var_editor_prop_name,
-                    get_prop_group_name,
-                    get_last_attr_name_in_sequence,
-                    get_attr_obj_str,
-                    set_attr_or_iter_from_str_nested,
-                    get_attr_or_iter_from_str_nested)
+from .utils import (get_attr_obj_str, get_attr_or_iter_from_str_nested,
+                    get_last_attr_name_in_sequence, get_prop_group_name,
+                    get_var_editor_prop_name, set_attr_or_iter_from_str_nested)
 
 logger = logging.getLogger(__name__)
 
 
 try:
     import bpy
-    from bpy.props import (BoolProperty, IntProperty,
-                           FloatProperty, StringProperty)
+    from bpy.props import (BoolProperty, FloatProperty, IntProperty,
+                           StringProperty)
     from bpy.types import PropertyGroup
     _WITH_BPY = True
 except ModuleNotFoundError:

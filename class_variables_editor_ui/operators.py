@@ -21,9 +21,8 @@ import re
 import string
 
 import bpy
-
-from bpy.props import BoolProperty, IntProperty, FloatProperty, StringProperty
-from bpy.types import Panel, Operator
+from bpy.props import BoolProperty, FloatProperty, IntProperty, StringProperty
+from bpy.types import Operator, Panel
 
 
 class EMTK_OT_emtk_invoke_operator_func(Operator):
