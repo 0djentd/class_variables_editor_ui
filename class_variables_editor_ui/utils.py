@@ -21,9 +21,6 @@ import logging
 import re
 
 logger = logging.getLogger(__name__)
-# logger.setLevel(logging.DEBUG)
-
-CLASS_VARIABLES_EDITOR_UI_VERSION = (0, 1, 0)
 
 
 def get_var_editor_prop_name(var_type) -> str:

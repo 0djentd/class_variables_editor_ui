@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "class_variables_editor_ui"
-version = "0.1.0"
+version = "0.1.1"
 description = "UI for class variables."
 authors = ["0djentd"]
 license = "GPL-3.0-or-later"
